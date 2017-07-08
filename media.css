@@ -87,8 +87,8 @@ body {
 
 #slide {
     border: 2px;
-    margin: 0px auto;
-    padding: 0px;
+    margin: 0 auto;
+    padding: 0;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 
 }
@@ -112,7 +112,7 @@ body {
 
 .arrow.left {
     background-image: url(pic/arrowL.png);
-    left: 0px;
+    left: 0;
 }
 
 .arrow.right {
