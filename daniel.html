@@ -9,29 +9,16 @@
         
     
      
-        
-        	var numer = Math.floor(Math.random()*3)+1;
-        
-            function hide()
-            {
-               $("#slide").fadeOut(500); 
-            }
-		
-			function changeslide()
-			{
-				numer++; if (numer>3) numer=1;
-				
-				var plik = "<img src=\"pic/slide" + numer + ".jpg\" />";
-				
-				document.getElementById("slide").innerHTML = plik;
-			
-                $("#slide").fadeIn(400);
-                
-				setTimeout("changeslide()",5000);
-                setTimeout("hide()",4600);
-			
-            }
-    
+   $("#slide > img:gt(0)").hide();
+
+setInterval(function() { 
+  $('#slide > img:first')
+    .fadeOut(3000)
+    .next()
+    .fadeIn(3000)
+    .end()
+    .appendTo('#slide');
+},  6000);
     
     
     
@@ -39,7 +26,7 @@
     
     
 </head>
-<body onload="changeslide()">
+<body>
     <div class="container">
         <div id="logo">
             <h1>SPEED-BUD</h1>
@@ -59,9 +46,9 @@
                 <div class="slider">           
                     <a href="#" class="arrow left"></a>
                         <div id="slide" >
-                           <!-- <img src="pic/slide1.jpg" alt="realizacja lazienki"/>
+                            <img src="pic/slide1.jpg" alt="realizacja lazienki"/>
                            <img class="hidden" src="pic/slide2.jpg"/>
-                            <img class="hidden" src="pic/slide3.jpg"/>-->
+                            <img class="hidden" src="pic/slide3.jpg"/>
                          </div>
                     <a href="#" class="arrow right"></a>     
                 </div>
