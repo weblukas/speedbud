@@ -5,9 +5,41 @@
     <title>Speed-Bud</title>
     <link rel="stylesheet" type="text/css" href="media.css"/>
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/scrip.js"></script>
+    <script type="text/javascript">
+        
+    
+     
+        
+        	var numer = Math.floor(Math.random()*3)+1;
+        
+            function hide()
+            {
+               $("#slide").fadeOut(500); 
+            }
+		
+			function changeslide()
+			{
+				numer++; if (numer>3) numer=1;
+				
+				var plik = "<img src=\"pic/slide" + numer + ".jpg\" />";
+				
+				document.getElementById("slide").innerHTML = plik;
+			
+                $("#slide").fadeIn(400);
+                
+				setTimeout("changeslide()",5000);
+                setTimeout("hide()",4600);
+			
+            }
+    
+    
+    
+    
+      </script>
+    
+    
 </head>
-<body>
+<body onload="changeslide()">
     <div class="container">
         <div id="logo">
             <h1>SPEED-BUD</h1>
@@ -17,7 +49,7 @@
         <nav class="menu">
            
                 <ul>
-                    <li><a href="#">Oferta</a></li>
+                    <li><a href="#slide">Oferta</a></li>
                     <li><a href="#">Galeria</a></li>
                     <li><a href="#">Kontakt</a></li>
                 </ul>
@@ -27,9 +59,9 @@
                 <div class="slider">           
                     <a href="#" class="arrow left"></a>
                         <div id="slide" >
-                            <img src="pic/__b_elegant-ornament.jpg" alt="realizacja lazienki"/>
+                           <!-- <img src="pic/slide1.jpg" alt="realizacja lazienki"/>
                            <img class="hidden" src="pic/slide2.jpg"/>
-                            <img class="hidden" src="pic/slide3.jpg"/>
+                            <img class="hidden" src="pic/slide3.jpg"/>-->
                          </div>
                     <a href="#" class="arrow right"></a>     
                 </div>
